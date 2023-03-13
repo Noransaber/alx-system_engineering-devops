@@ -1,2 +1,2 @@
 #!/bin/bash
-fint . -type f -name "*.git" | rev | cut -d '/' -f 1 | cutt -d '.' 2- | rev | LC_ALL=C sort -f
+fint -type f -name "*.git" | rev | cut -d "/" -f 1 | cut -d '.' 2- | rev | LC_ALL=C sort -f
