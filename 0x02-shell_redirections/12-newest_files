@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -newer -n 10 | sort -M
+ls -t1 | head
