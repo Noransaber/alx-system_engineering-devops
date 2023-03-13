@@ -1,0 +1,2 @@
+#!/bin/bash
+fint . -type f -name "*.gif" | rev | cut -d '/' -f 1 | cutt -d '.' 2- | rev | LC_ALL=C sort -f
