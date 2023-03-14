@@ -1,2 +1,2 @@
 #!/bin/bash
-NUM="%.2%f"
+echo "%.2f\n" 300
