@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "to the power LOVE {{$BREATH}}"
+echo $((BREATH**LOVE))
