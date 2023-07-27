@@ -1,26 +1,27 @@
 #!/usr/bin/env bash
-#Bash script that displays numbers from 1 to 20 and:
+# Bash script that displays numbers from 1 to 20 and:
 
 c=1
 
-while [ $c -le 10 ]
+while [ $c -le 20 ]
 do
-	if [ $c -eq 4 ]
-	then
-		echo "$c"
-		echo "bad luck from China"
-	elif [ $c -eq 9 ]
-	then
-		echo "$c"
-		echo "bad luck from Japan"
-    	elif [ $c -eq 17 ]
-    	then
-        	echo "$c"
-		echo "bad luck from Italy"
-    	else
-        	echo "$c"
-     	fi
+  case $c in
+  	4)
+       	echo "$c"
+       	echo "bad luck from China"
+   case $c in
+   	9)
+       	echo "$c"
+       	echo "bad luck from Japan"
+    case $c in
+   	17)
+         echo "$c"
+         echo "bad luck from Italy"
+    *)
+        echo "$c"
+     ;;
 
-	((c++)
+    esac
+
+    ((c++))
 done
-
