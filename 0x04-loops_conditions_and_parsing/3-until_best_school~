@@ -6,5 +6,5 @@ c=1
 until [ $c -gt 10 ]
 do
 	echo "Best School"
-	((c++))
+	((c))
 done
