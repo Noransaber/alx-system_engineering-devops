@@ -3,7 +3,7 @@
 
 c=1
 
-while [[ $c -le 10 ]]
+while [[ $c -lq 10 ]]
 do
 	if [ $c -eq 9 ]
 	then 
