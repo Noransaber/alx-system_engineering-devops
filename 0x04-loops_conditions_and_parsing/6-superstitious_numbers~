@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#Bash script that displays numbers from 1 to 20 and:
+
+c=1
+
+while [ $c -le 10 ]
+do
+	if [ $c -eq 4 ]
+	then
+		echo "$c"
+		echo "bad luck from China"
+	elif [ $c -eq 9 ]
+	then
+		echo "$c"
+		echo "bad luck from Japan"
+    	elif [ $c -eq 17 ]
+    	then
+        	echo "$c"
+		echo "bad luck from Italy"
+    	else
+        	echo "$c"
+     	fi
+
+	((c++)
+done
+
