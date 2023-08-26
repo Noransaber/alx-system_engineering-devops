@@ -4,7 +4,7 @@
 ## Definition and explanation
 
 <img src="Screenshot 2023-08-26 123112.png" alt="Image of a secured and monitored infrastructure">
-Visit Board => (https://imgur.com/p26odBC)
+Visit Board => https://imgur.com/p26odBC
 
 
 **Q1. For every additional element why you added them?** 
