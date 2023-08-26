@@ -3,7 +3,7 @@
 ## Task 2
 ## Definition and explanation
 
-![img](https://imgur.com/p26odBC)
+![Image of a secured and monitored infrastructure](Screenshot 2023-08-26 123112.png')
 
 **Q1. For every additional element why you added them?** 
 - We added, firewall for every server to protect it from being attacked or exploited
