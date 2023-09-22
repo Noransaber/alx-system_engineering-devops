@@ -1,8 +1,10 @@
 # 0x0A. Configuration management🫡
-- DevOps
-- SysAdmin
-- Scripting
-- CI/CD
+- [![DevOps][badge-devops]][devops-link]
+- [![SysAdmin][badge-sysadmin]][sysadmin-link]
+- [![Scripting][badge-scripting]][scripting-link]
+- [![CI/CD][badge-cicd]][cicd-link]
+
+
 
 <img src="img.gif" alt="">
 
