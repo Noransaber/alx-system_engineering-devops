@@ -1,8 +1,7 @@
 # 0x0A. Configuration management🫡
-- DevOps
-- SysAdmin
-- Scripting
-- CI/CD
+**DevOps SysAdmin Scripting CI/CD**
+
+
 
 <img src="img.gif" alt="">
 
@@ -26,3 +25,7 @@ $ apt-get install -y puppet`
 
 `$ gem install puppet-lint`
 
+## Tasks
+- [0. Create a file](https://intranet.alxswe.com/projects/292)
+- [1. Install a package](https://intranet.alxswe.com/projects/292)
+- [2. Execute a command](https://intranet.alxswe.com/projects/292)
