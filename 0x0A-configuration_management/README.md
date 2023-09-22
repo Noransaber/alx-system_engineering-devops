@@ -16,10 +16,10 @@
 # Note on Versioning🙃
 ## Install puppet
 
-`$ apt-get install -y ruby=1:2.7+1 --allow-downgrades`
-`$ apt-get install -y ruby-augeas`
-`$ apt-get install -y ruby-shadow`
-`$ apt-get install -y puppet`
+- `$ apt-get install -y ruby=1:2.7+1 --allow-downgrades`
+- `$ apt-get install -y ruby-augeas`
+- `$ apt-get install -y ruby-shadow`
+- `$ apt-get install -y puppet`
 
 - [Puppet 5 Docs](https://www.puppet.com/docs/puppet/5.5/puppet_index.html)
 
