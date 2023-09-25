@@ -1,14 +1,14 @@
-# 0x0C. Web server
+# 0x0C. Web server🕸️
 
-**Concept**
+**Concept**👀
 For this project, we expect you to look at this concept:
 - [What is a Child Process?](https://intranet.alxswe.com/concepts/110)
 
 <img src="w.png" alt="">
 
 
-## Resources
-Read or watch:
+## Resources📑
+Read or watch:🧑‍💻
 - [How the web works](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works)
 - [Nginx](https://en.wikipedia.org/wiki/Nginx)
 - [How to Configure Nginx](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04)
@@ -23,14 +23,14 @@ Read or watch:
 - [RFC 7540 (HTTP/2)](https://datatracker.ietf.org/doc/html/rfc7540)
 
   
-**man or help:**
+**man or help:**🥵
 - `scp`
 - `curl`
 
 A good Software Engineer is [a lazy Software Engineer](https://www.techwell.com/techwell-insights/2013/12/why-best-programmers-are-lazy-and-act-dumb)
 <img src="l.jpg" alt="">
 
-# Tasks
+# Tasks💭🤔
 - [0. Transfer a file to your server](https://intranet.alxswe.com/projects/266#quiz-completed)
 - [1. Install nginx web server](https://intranet.alxswe.com/projects/266#quiz-completed)
 - [2. Setup a domain name](https://intranet.alxswe.com/projects/266#quiz-completed)
