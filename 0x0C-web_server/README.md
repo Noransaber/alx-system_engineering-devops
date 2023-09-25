@@ -4,7 +4,7 @@
 For this project, we expect you to look at this concept:
 - [What is a Child Process?](https://intranet.alxswe.com/concepts/110)
 
-<img src="w.jpg" alt="">
+<img src="w.png" alt="">
 
 
 ## Resources
@@ -21,6 +21,8 @@ Read or watch:
 **For reference:**
 - [RFC 7231 (HTTP/1.1)](https://datatracker.ietf.org/doc/html/rfc7231)
 - [RFC 7540 (HTTP/2)](https://datatracker.ietf.org/doc/html/rfc7540)
+
+  
 **man or help:**
 - `scp`
 - `curl`
