@@ -27,9 +27,8 @@ Read or watch:
 - `scp`
 - `curl`
 
+A good Software Engineer is [a lazy Software Engineer](https://www.techwell.com/techwell-insights/2013/12/why-best-programmers-are-lazy-and-act-dumb)
 <img src="l.jpg" alt="">
-A good Software Engineer is [a lazy Software Engineer](https://www.techwell.com/techwell-insights/2013/12/why-best-programmers-are-lazy-and-act-dumb).
-
 
 # Tasks
 - [0. Transfer a file to your server](https://intranet.alxswe.com/projects/266#quiz-completed)
