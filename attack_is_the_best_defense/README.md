@@ -19,5 +19,5 @@
 - `docker`
 
 ## Tasks
-[0. ARP spoofing and sniffing unencrypted traffic](https://intranet.alxswe.com/projects/264)
-[1. Dictionary attack](https://intranet.alxswe.com/projects/264)
+- [0. ARP spoofing and sniffing unencrypted traffic](https://intranet.alxswe.com/projects/264)
+- [1. Dictionary attack](https://intranet.alxswe.com/projects/264)
