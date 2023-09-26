@@ -1,34 +1,32 @@
 #!/usr/bin/env bash
 # Install nginx web server
 
-sudo apt -y update
-sudo apt -y install nginx
+apt-get -y update
+apt-get -y install nginx
 
-# Remove and replace /var/www to store static content
+# Start nginx
+if [[ ! $(pgrep nginx) ]]; then
+    service nginx start
+fi
 
-rm -rf school
-mkdir school
-touch school/index.html
-echo "Hello World!" > school/index.html
-sudo rm -rf /var/www/school
-sudo mv school /var/www/
+# Get the first root directory of nginx from the configuration file
+root_dir=$(grep "root" /etc/nginx/sites-available/default | cut -d " " -f 2 | tr -d ";" | head -1)
 
-# Change the default configuration of nginx
-touch default
-printf %s "server {
-       listen 80;
-       listen [::]:80;
+# Create the directory if it doesn't exist
+if [[ ! -d $root_dir ]]; then
+    sudo mkdir -p "$root_dir"
+fi
 
-       root /var/www/school;
-       index index.html;
-}
-" > default
+# Write `Hello World!` to the index.html file
+echo "Hello World!" > "$root_dir"/index.html
 
-# Remove and replace existing configurations
-sudo rm -rf /etc/nginx/sites-available/default
-sudo rm -rf /etc/nginx/sites-enabled/default
-sudo mv default /etc/nginx/sites-available/
-sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+# Check if Nginx is running and serving the expected content
+response=$(curl -s http://localhost)
+if [[ $response == "Hello World!" ]]; then
+  echo "Nginx installation and configuration successful!"
+else
+  echo "Nginx installation or configuration failed."
+  exit 1
+fi
 
-# Restart nginx
-sudo service nginx restart
+exit 0
