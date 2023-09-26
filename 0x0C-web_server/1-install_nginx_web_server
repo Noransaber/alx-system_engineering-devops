@@ -1,25 +1,34 @@
 #!/usr/bin/env bash
 # Install nginx web server
 
-sudo service nginx start
+sudo apt -y update
+sudo apt -y install nginx
 
-echo "server {
-    listen 80;
-    server_name _;
+# Remove and replace /var/www to store static content
 
-    location / {
-        root /var/www/html;
-        index index.html;
-        add_header Content-Type text/html;
-        echo 'Hello World!';
-    }
-}" | sudo tee /etc/nginx/sites-available/default > /dev/null
+rm -rf school
+mkdir school
+touch school/index.html
+echo "Hello World!" > school/index.html
+sudo rm -rf /var/www/school
+sudo mv school /var/www/
 
-sudo service nginx reload
-sudo update-rc.d nginx enable
-if pgrep nginx > /dev/null
-then
-    echo "Nginx is running."
-else
-    echo "Nginx is not running. Something went wrong."
-fi
+# Change the default configuration of nginx
+touch default
+printf %s "server {
+       listen 80;
+       listen [::]:80;
+
+       root /var/www/school;
+       index index.html;
+}
+" > default
+
+# Remove and replace existing configurations
+sudo rm -rf /etc/nginx/sites-available/default
+sudo rm -rf /etc/nginx/sites-enabled/default
+sudo mv default /etc/nginx/sites-available/
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# Restart nginx
+sudo service nginx restart
