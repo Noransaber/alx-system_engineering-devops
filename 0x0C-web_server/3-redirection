@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
-#Configure your Nginx server so that
-#/redirect_me is redirecting to another page
+#Configure your Nginx server so that /redirect_me is redirecting to another page
 
-sudo apt-get -y update
-sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-echo "Hello World!" > sudo /var/www/html/index.nginx-debian.html
-sed -i "37i\rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
-sudo service nginx start
+apt-get update
+apt-get install -y nginx
+
+# Create default page
+echo "Holberton School" > /var/www/html/index.html
+
+# Configurate server
+ufw allow 'Nginx HTTP'
+
+# Add redirection
+new_site="https://github.com/EstephaniaCalvoC/"
+sed -i "/listen 80 default_server/a rewrite ^/redirect_me $new_site permanent;" /etc/nginx/sites-available/default
+
+service nginx restart

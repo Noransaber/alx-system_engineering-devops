@@ -1,20 +1,24 @@
 #!/usr/bin/env bash
 # Configure your Nginx server to have a custom
-$ 404 page that contains the string
-# Ceci n'est pas une page.
 
-ADD301_REDIRECT="\\\tlocation /redirect_me {\n\t\t return 301 https://google.com;\n\t}\n"
-ADD404_NOTFOUND="error_page 404 /custom_404.html;\n\\tlocation = /custom_404.html {\n\t\t root /usr/share/nginx/html;\n\t\tinternal;\n\t}\n"
-PATTERN="#error_page 404 /404.html;"
+apt-get update
+apt-get install -y nginx
 
-sudo apt-get update
-sudo apt-get -y install nginx
-sudo service nginx start
+# Create default page
+echo "Holberton School" > /var/www/html/index.html
 
-echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
-sudo sed -i "30i $ADD301_REDIRECT" /etc/nginx/sites-available/default #add at line 30
+# Configurate server
+ufw allow 'Nginx HTTP'
 
-echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
-sudo sed -i "s@$PATTERN@$ADD404_NOTFOUND@" /etc/nginx/sites-available/default #uncomment and replace
+f_config="/etc/nginx/sites-available/default"
+# Add redirection
+new_site="https://github.com/EstephaniaCalvoC/"
+sed -i "/listen 80 default_server/a rewrite ^/redirect_me $new_site permanent;" $f_config
 
-sudo service nginx restart
+# Add 404 redirection
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/my_404.html
+new_404="my_404.html"
+l_new_404="/my_404.html {root /usr/share/nginx/html;\n internal;}"
+sed -i "/listen 80 default_server/a error_page 404 /$new_404; location = $l_new_404" $f_config
+
+service nginx restart
