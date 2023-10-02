@@ -23,3 +23,8 @@ For this project, you will need to write Bash scripts to automate your work. All
 - [Introduction to load-balancing and HAproxy](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts)
 - [HTTP header](https://www.techopedia.com/definition/27178/http-header)
 - [Debian/Ubuntu HAProxy packages](https://haproxy.debian.net/)
+
+
+## TASKS
+- [0. Double the number of webservers](https://intranet.alxswe.com/projects/275)
+- [1. Install your load balancer](https://intranet.alxswe.com/projects/275)
