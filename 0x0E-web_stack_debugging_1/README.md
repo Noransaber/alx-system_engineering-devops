@@ -7,7 +7,7 @@
 - [Web stack debugging](https://intranet.alxswe.com/concepts/68)
 
 
-<img src="v.jpg" alt="">
+<img src="V.jpg" alt="">
 
 
 ## TASKS
