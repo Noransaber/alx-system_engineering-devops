@@ -1,3 +1,0 @@
-sed: couldn't open temporary file /etc/nginx/sites-enabled/sed36Xh70: Permission denied
-Failed to restart nginx.service: Interactive authentication required.
-See system logs and 'systemctl status nginx.service' for details.
