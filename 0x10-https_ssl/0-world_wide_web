@@ -25,3 +25,4 @@ if [ $# -eq 1 ]; then
 	for subs in "${subdomains[@]}"; do
 		dig_cmd "$domain" "$subs"
 	done
+fi
