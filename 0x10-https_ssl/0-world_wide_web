@@ -1,31 +1,43 @@
 #!/usr/bin/env bash
 # script to dig subdomain records for the domain specified
 
-# Function to query DNS information for a subdomain
-get_dns_info() {
-    local domain="$1"
-    local subdomain="$2"
-    local result="$(dig "${subdomain}.${domain}" | awk '/ANSWER SECTION/{getline; print}')"
-    echo "The subdomain $subdomain is a $result record and points to $(echo "$result" | awk '{print $NF}')"
+# Define a function to get the record type and destination of a subdomain
+function get_subdomain_info() {
+  local subdomain=$1
+
+  # Get the record type of the subdomain
+  local record_type=$(dig -t any "$subdomain" | grep -A 1 'ANSWER SECTION:' | awk '{print $1}')
+
+  # Get the destination of the subdomain
+  local destination=$(dig -t any "$subdomain" | grep -A 1 'ANSWER SECTION:' | awk '{print $4}')
+
+  echo "$record_type $destination"
 }
 
-# Check if the script is called with at least one argument
-if [ $# -lt 1 ]; then
-    echo "Usage: $0 <domain> [<subdomain>]"
-    exit 1
-fi
+# Get the domain name to audit
+domain=$1
 
-domain="$1"
-subdomain="$2"
+# If a subdomain is specified, get its record type and destination
+if [[ -n "$2" ]]; then
+  subdomain=$2
 
-if [ -z "$subdomain" ]; then
-    # No subdomain provided, so check the default ones
-    subdomains=("www" "lb-01" "web-01" "web-02")
-    for sub in "${subdomains[@]}"; do
-        get_dns_info "$domain" "$sub"
-    done
+  # Get the subdomain information
+  subdomain_info=$(get_subdomain_info "$subdomain")
+
+  # Display the subdomain information
+  echo "The subdomain $subdomain is a $subdomain_info"
+
+# Otherwise, get the record type and destination of all four subdomains
 else
-    # Specific subdomain provided, so check only that one
-    get_dns_info "$domain" "$subdomain"
-fi
+  # Get the record type and destination of each subdomain
+  www_info=$(get_subdomain_info "www.$domain")
+  lb01_info=$(get_subdomain_info "lb-01.$domain")
+  web01_info=$(get_subdomain_info "web-01.$domain")
+  web02_info=$(get_subdomain_info "web-02.$domain")
 
+  # Display the subdomain information in the specified order
+  echo "The subdomain www is a $www_info"
+  echo "The subdomain lb-01 is a $lb01_info"
+  echo "The subdomain web-01 is a $web01_info"
+  echo "The subdomain web-02 is a $web02_info"
+fi
