@@ -6,18 +6,20 @@ function get_a_records(){
         response="$(dig "$2.$1" | grep -i -A1 "answer section" | tail -n 1)"
         destination="$(echo "$response" | awk '{ print $5 }')"
         record_type="$(echo "$response" | awk '{ print $4 }')"
-        echo  "The subdomain "$2" is a "$record_type" record and points to "$destination""
+        time="$(echo "$response" | awk '{ print $2 }')"  # Corrected field for time
+        echo "The subdomain $2 is a $record_type record and points to $destination (Time: $time ms)"
 
     else
         subdomains=(www lb-01 web-01 web-02)
         for sub_d in "${subdomains[@]}"; do
             response="$(dig "$sub_d.$1" | grep -i -A1 "answer section" | tail -n 1)"
-            destination="$(echo ""$response"" | awk '{ print $5 }')"
-            record_type="$(echo """$response""" | awk '{ print $4 }')"
-            echo "The subdomain ""$sub_d"" is a ""$record_type"" record and points to ""$destination"""
-
+            destination="$(echo "$response" | awk '{ print $5 }')"
+            record_type="$(echo "$response" | awk '{ print $4 }')"
+            time="$(echo "$response" | awk '{ print $2 }')"  # Corrected field for time
+            echo "The subdomain $sub_d is a $record_type record and points to $destination (Time: $time ms)"
         done
     fi
- 
 }
+
 get_a_records "$1" "$2";
+   
