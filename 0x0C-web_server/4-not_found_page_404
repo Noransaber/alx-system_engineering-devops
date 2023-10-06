@@ -1,24 +1,10 @@
 #!/usr/bin/env bash
-# Configure your Nginx server to have a custom
+#Install nginx web server and Redirection
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo sh -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
+sudo sed -i '/^}$/i \ \n\tlocation \/redirect_me {return 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;}' /etc/nginx/sites-available/default
+sudo sed -i '/^}$/i \ \n\tlocation @404 {return 404 "Ceci n'\''est pas une page\\n";}' /etc/nginx/sites-available/default
+sudo sed -i 's/=404/@404/g' /etc/nginx/sites-available/default
+sudo service nginx start:wq
 
-apt-get update
-apt-get install -y nginx
-
-# Create default page
-echo "Holberton School" > /var/www/html/index.html
-
-# Configurate server
-ufw allow 'Nginx HTTP'
-
-f_config="/etc/nginx/sites-available/default"
-# Add redirection
-new_site="https://github.com/EstephaniaCalvoC/"
-sed -i "/listen 80 default_server/a rewrite ^/redirect_me $new_site permanent;" $f_config
-
-# Add 404 redirection
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/my_404.html
-new_404="my_404.html"
-l_new_404="/my_404.html {root /usr/share/nginx/html;\n internal;}"
-sed -i "/listen 80 default_server/a error_page 404 /$new_404; location = $l_new_404" $f_config
-
-service nginx restart

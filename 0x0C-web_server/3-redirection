@@ -1,45 +1,7 @@
 #!/usr/bin/env bash
-#Configure your Nginx server so that /redirect_me is redirecting to another page
-
-# Install nginx
-apt-get -y update
-apt-get -y install nginx
-
-# Start nginx
-if [[ ! $(pgrep nginx) ]]; then
-    service nginx start
-fi
-
-ufw allow 'Nginx HTTP'
-
-chown -R "$USER":"$USER" /var/www/html
-chmod -R 755 /var/www
-
-root_dir=$(grep "root" /etc/nginx/sites-available/default | cut -d " " -f 2 | tr -d ";" | head -1)
-
-if [[ ! -d $root_dir ]]; then
-    sudo mkdir -p "$root_dir"
-fi
-
-echo "Hello World!" > "$root_dir"/index.html
-
-response=$(curl -s http://localhost)
-if [[ $response == "Hello World!" ]]; then
-  echo "Nginx installation and configuration successful!"
-else
-  echo "Nginx installation or configuration failed."
-  exit 1
-fi
-
-sudo sed -i "/listen 80 default_server;/a rewrite ^/redirect_me https://linkedin.com/in/achrafelkhnissi/ permanent;" /etc/nginx/sites-available/default
-
-if nginx -t | grep "successful"; then
-  echo "Nginx configuration failed."
-  exit 1
-fi
-
-nginx -s reload
-
-service nginx restart
-
-exit 0
+#Install nginx web server and Redirection
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo sh -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
+sudo sed -i '/^}$/i \ \n\tlocation \/redirect_me {return 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;}' /etc/nginx/sites-available/default
+sudo service nginx start
