@@ -1,12 +1,26 @@
 #!/usr/bin/env bash
 #Double the number of webservers
+
 sudo apt-get -y update
 sudo apt-get -y install nginx
-#sudo wget -q -O /etc/nginx/sites-available/default http://exampleconfig.com/static/raw/nginx/ubuntu20.04/etc/nginx/sites-available/default
+
 config="/etc/nginx/sites-available/default"
+
+# Create the index file
 sudo sh -c "echo 'Hello World!' > /var/www/html/index.nginx-debian.html"
-sudo sed -i '/^}$/i \ \n\tlocation \/redirect_me {return 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;}' $config
-sudo sed -i '/^}$/i \ \n\tlocation @404 {return 404 "Ceci n'\''est pas une page\\n";}' $config
-sudo sed -i 's/=404/@404/g' $config
-sudo sed -i "0,/location \/ {/s/location \/ {/&\n\t\tadd_header X-Served-By '$HOSTNAME';/" $config
+
+# Add X-Served-By header
+sudo sed -i '/location \/ {/a \ \t\tadd_header X-Served-By $hostname;' $config
+
+# Add redirection location
+sudo sed -i '/location \/ {/a \ \tlocation /redirect_me { return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4; }' $config
+
+# Add custom 404 page
+sudo sed -i '/location \/ {/a \ \tlocation @404 { return 404 "Ceci n'\''est pas une page\n"; }' $config
+
+# Update the 404 error page reference
+sudo sed -i 's/=/ @404/g' $config
+
+# Restart nginx
 sudo service nginx restart
+
