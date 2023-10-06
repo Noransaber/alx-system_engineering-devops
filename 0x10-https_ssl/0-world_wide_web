@@ -1,25 +1,31 @@
 #!/usr/bin/env bash
 # script to dig subdomain records for the domain specified
 
-function get_a_records(){
-    if [[ -n "$2" ]]; then
-        response="$(dig "$2.$1" | grep -i -A1 "answer section" | tail -n 1)"
-        destination="$(echo "$response" | awk '{ print $5 }')"
-        record_type="$(echo "$response" | awk '{ print $4 }')"
-        time="$(echo "$response" | awk '{ print $2 }')"  # Corrected field for time
-        echo "The subdomain $2 is a $record_type record and points to $destination (Time: $time ms)"
-
-    else
-        subdomains=(www lb-01 web-01 web-02)
-        for sub_d in "${subdomains[@]}"; do
-            response="$(dig "$sub_d.$1" | grep -i -A1 "answer section" | tail -n 1)"
-            destination="$(echo "$response" | awk '{ print $5 }')"
-            record_type="$(echo "$response" | awk '{ print $4 }')"
-            time="$(echo "$response" | awk '{ print $2 }')"  # Corrected field for time
-            echo "The subdomain $sub_d is a $record_type record and points to $destination (Time: $time ms)"
-        done
-    fi
+# Function to query DNS information for a subdomain
+get_dns_info() {
+    local domain="$1"
+    local subdomain="$2"
+    local result="$(dig "${subdomain}.${domain}" | awk '/ANSWER SECTION/{getline; print}')"
+    echo "The subdomain $subdomain is a $result record and points to $(echo "$result" | awk '{print $NF}')"
 }
 
-get_a_records "$1" "$2";
-   
+# Check if the script is called with at least one argument
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 <domain> [<subdomain>]"
+    exit 1
+fi
+
+domain="$1"
+subdomain="$2"
+
+if [ -z "$subdomain" ]; then
+    # No subdomain provided, so check the default ones
+    subdomains=("www" "lb-01" "web-01" "web-02")
+    for sub in "${subdomains[@]}"; do
+        get_dns_info "$domain" "$sub"
+    done
+else
+    # Specific subdomain provided, so check only that one
+    get_dns_info "$domain" "$subdomain"
+fi
+
