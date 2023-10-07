@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # DOUBLE THE NUMBER OF WEBSERVERS
+# Usage: ./1-world_wide_web <domain> <subdomain>
 
 # Function to retrieve and display information about a subdomain
 
