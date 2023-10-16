@@ -29,12 +29,12 @@ As explained in the web stack debugging guide concept page, telnet is a very goo
 We can see for this example that the connection is successful: Connected to web-02.holberton.online.
 
 Now let’s try connecting to port 2222:`
-`
+
 `sylvain@ubuntu$ telnet web-02.holberton.online 2222`
 `Trying 54.89.38.100...`
 `^C`
 `sylvain@ubuntu$`
-`
+
 
 ## Tasks
 - [0. Block all incoming traffic but](https://intranet.alxswe.com/projects/284)
