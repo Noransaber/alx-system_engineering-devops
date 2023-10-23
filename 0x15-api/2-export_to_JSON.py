@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Export to csv the information about user TODO list progress"""
-
+import json
 import requests
 from sys import argv
-import json
+
 
 if __name__ == "__main__":
     user_id = argv[1]
@@ -13,7 +13,6 @@ if __name__ == "__main__":
     uri_todos = "todos"
 
     user_name = requests.get(url + uri_user_id).json().get("username")
-    task_title = requests.get(url + uri_user_id).json().get("title")
     tasks = requests.get(url + uri_todos, params={"userId": user_id}).json()
 
     with open("{}.json".format(user_id), "w", newline="") as jsonfile:
