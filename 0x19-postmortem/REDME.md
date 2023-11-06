@@ -36,7 +36,7 @@ The root cause of the issue was a critical failure in the storage subsystem of o
 
 ## Corrective and Preventative Measures:
 
-1. Corrective Measures:
+## Corrective Measures:
 
 - Regular Maintenance: Implement a proactive schedule for firmware updates and regular maintenance of hardware components.
 
@@ -44,7 +44,7 @@ The root cause of the issue was a critical failure in the storage subsystem of o
 
 * Data Backup: Establish a robust and frequent data backup strategy to minimize data loss in case of future failures.
 
-2. Preventative Measures:
+## Preventative Measures:
 
 * Vendor Communication: Maintain open communication with hardware vendors to stay informed about potential firmware updates and known issues.
 
