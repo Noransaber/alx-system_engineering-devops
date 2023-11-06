@@ -4,11 +4,9 @@
 
 <img src="f.jpg" alt="">
 
-**Duration:**
-The outage occurred on Nov 5, 2023, starting at 10:00AM(GMT+2) and lasted for 4 hours, ending at 2:00pm(GMT+2)
+**Duration:** The outage occurred on Nov 5, 2023, starting at 10:00AM(GMT+2) and lasted for 4 hours, ending at 2:00pm(GMT+2)
 
-**Impact:**
-The backend failure resulted in the unavailability of our core service, affecting 25% of our users. Users experienced slow response times and data loss during the outage.
+**Impact:** The backend failure resulted in the unavailability of our core service, affecting 25% of our users. Users experienced slow response times and data loss during the outage.
 
 ## Root Cause:🤔
 The root cause of the issue was a critical failure in the storage subsystem of our backend servers. Specifically, a disk controller malfunctioned due to a firmware bug, leading to a cascade failure in the entire storage array.🙆‍♀️
@@ -36,7 +34,7 @@ The root cause of the issue was a critical failure in the storage subsystem of o
 ## Root Cause and Resolution:🧑‍💻
 **Root Cause:** The issue was caused by a firmware bug in the disk controller, which led to a cascading failure in the storage array, making data temporarily unavailable.
 
-**Resolution:**💚😌 The malfunctioning disk controller was replaced, and data recovery was performed to restore lost data. Firmware updates were applied to prevent similar issues in the future.
+**Resolution:💚😌** The malfunctioning disk controller was replaced, and data recovery was performed to restore lost data. Firmware updates were applied to prevent similar issues in the future.
 
 ## Corrective and Preventative Measures:✅
 
