@@ -1,5 +1,6 @@
 # Postmortem: Data Loss Due to Backend Failure
 **Our Backend**
+
 <img src="f.jpg" alt="">
 
 *Duration*: The outage occurred on Nov 5, 2023, starting at 10:00AM(GMT+2) and lasted for 4 hours, ending at 2:00pm(GMT+2)
