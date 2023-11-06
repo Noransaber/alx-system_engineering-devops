@@ -1,5 +1,4 @@
 # Postmortem: Data Loss Due to Backend Failure
-**Our Backend**
 
 <img src="f.jpg" alt="">
 
