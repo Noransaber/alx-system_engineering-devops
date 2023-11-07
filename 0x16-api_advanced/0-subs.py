@@ -31,5 +31,5 @@ def number_of_subscribers(subreddit):
     try:
         return jsonResponse.get('data').get('subscribers')
     # If you could't get it
-    except:
+    except exceptions.RequestException as e:
         return 0
