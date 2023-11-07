@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+
 """
-Importing requests module
+importing requests module
 """
 
 from requests import get
@@ -8,33 +9,25 @@ from requests import get
 
 def top_ten(subreddit):
     """
-    prints the titles of the first 10 hot posts listed for a given subreddit.
-    If not a valid subreddit, print None.
+    function that queries the Reddit API and prints the titles of the first
+    10 hot posts listed for a given subreddit
     """
-    # Check if the subredit is none, Return 0
-    if subreddit is None or subreddit is not isinstance(subreddit, str):
+
+    if subreddit is None or not isinstance(subreddit, str):
         print("None")
 
-    # Identifiying the user agent
     user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
+    params = {'limit': 10}
+    url = 'https://www.reddit.com/r/{}/hot/.json'.format(subreddit)
 
-    # The params. which mean how many post we want to print
-    params = {"limit": 10}
-
-    # Identify the url
-    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-
-    # Make the requesst
     response = get(url, headers=user_agent, params=params)
+    fetch_data = response.json()
 
-    # Convert the response intp json format
-    jsonResponse = response.json()
-
-    # Try to get top posts
     try:
-        row = jsonResponse.get('data').get('children')
-        for i in row:
+        raw1 = fetch_data.get('data').get('children')
+
+        for i in raw1:
             print(i.get('data').get('title'))
-    # If you could't get it
+
     except:
         print("None")
