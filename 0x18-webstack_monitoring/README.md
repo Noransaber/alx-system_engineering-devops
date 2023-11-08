@@ -1,29 +1,29 @@
-# 0x18. Webstack monitoring
+# 0x18. Webstack monitoring👀
 
 <p align='center'>
    <img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/281/hb3pAsO.png">
 </p>
 
-## Learning Objectives
+## Learning Objectives📑
 * Why is monitoring needed
 * What are the 2 main area of monitoring
 * What are access logs for a web server (such as Nginx)
 * What are error logs for a web server (such as Nginx)
 
-## Resources
+## Resources📚
 * [What is server monitoring](http://www.monitance.com/en/product-news/what-is-server-monitoring-and-why-is-it-important/)
 * [What is application monitoring](https://en.wikipedia.org/wiki/Application_performance_management)
 * [System monitoring by Google](https://landing.google.com/sre/sre-book/chapters/monitoring-distributed-systems/)
 * [Nginx logging and monitoring](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/)
 
-## Background Context
+## Background Context💭
 “You cannot fix or improve what you cannot measure” is a famous saying in the Tech industry. In the age of the data-ism, monitoring how our Software systems are doing is an important thing. In this project, we will implement one of many tools to measure what is going on our servers.
 
 Web stack monitoring can be broken down into 2 categories:
 * Application monitoring: getting data about your running software and making sure it is behaving as expected
 * Server monitoring: getting data about your virtual or physical server and making sure they are not overloaded (could be CPU, memory, disk or network overload)
 
-## Requirements
+## Requirements🤔
 * All your files will be interpreted on Ubuntu 16.04 LTS
 * All your files should end with a new line
 * A `README.md` file, at the root of the folder of the project, is mandatory
@@ -34,7 +34,7 @@ Web stack monitoring can be broken down into 2 categories:
 
 ---
 
-## TASKS
+## TASKS🧑‍💻
 
 ### [0. Sign up for Datadog and install datadog-agent](./0-setup_datadog)
 For this task head to [https://www.datadoghq.com/](https://www.datadoghq.com/) and sign up for a free `Datadog` account. When signing up, you’ll have the option of selecting statistics from your current stack that `Datadog` can monitor for you. Once you have an account set up, follow the instructions given on the website to install the `Datadog` agent. 
@@ -57,7 +57,8 @@ Now create a dashboard with different metrics displayed in order to get a few di
 ---
 
 ## Author
-* **Welcome to** - [Noran](https://github.com/Noransaber)
-* Twitter - [Noransaber](https://twitter.com/Noransaber11)
-* Medium - [Noransaber](https://medium.com/@noransaber685)
-* Linkedin - [Noransaber](https://www.linkedin.com/in/noran-saber-abdelfattah-6198471ba/)
+**Noran**💚
+* Github - [My Github](https://github.com/Noransaber)😌
+* Twitter - [My Twitter](https://twitter.com/Noransaber11)❤️
+* Medium - [My Medium](https://medium.com/@noransaber685)🧑‍💻
+* Linkedin - [My Linkedin](https://www.linkedin.com/in/noran-saber-abdelfattah-6198471ba/)🌹
