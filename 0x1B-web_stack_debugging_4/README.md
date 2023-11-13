@@ -1,12 +1,12 @@
-# 0x1B. Web stack debugging #4
+![ClipWindowsGIF](https://github.com/Noransaber/alx-system_engineering-devops/assets/112859455/d9a31cd3-40f8-4b18-9afe-b583d1a81f25)# 0x1B. Web stack debugging #4😮‍💨
 
-# Install puppet-lint
+# Install puppet-lint👀
 ```
 $ apt-get install -y ruby
 $ gem install puppet-lint -v 2.1.1
 ```
 
-## Tasks
+## Tasks📑
 - [0. Sky is the limit, let's bring that limit higher](https://intranet.alxswe.com/projects/313)
 
 *In this web stack debugging task, we are testing how well our web server setup featuring Nginx is doing under pressure and it turns out it’s not doing well: we are getting a huge amount of failed requests.
@@ -134,8 +134,8 @@ Percentage of the requests served within a certain time (ms)
 root@0a62aa706eb3:/#
 ```
 
-## My Links
-- [Github](https://github.com/Noransaber)
-- [LinkedIn](https://www.linkedin.com/in/noran-saber-abdelfattah-6198471ba/)
-- [Twitter](https://twitter.com/Noransaber11)
-- [Medium](https://medium.com/@noransaber685t)
+## My Links🔗
+- [Github](https://github.com/Noransaber)💚
+- [LinkedIn](https://www.linkedin.com/in/noran-saber-abdelfattah-6198471ba/)💚
+- [Twitter](https://twitter.com/Noransaber11)💚
+- [Medium](https://medium.com/@noransaber685t)💚
