@@ -1,10 +1,8 @@
-# 0x1A. Application server
+# 0x1A. Application server🧑‍💻
 
 ## Tasks
 
 <details>
-<summary>View Contents</summary>
-
 ### [0. Set up development with Python](./README.md)
 
 - Let’s serve what you built for AirBnB clone v2 - Web framework on web-01. This task is an exercise in setting up your development environment, which is used for testing and debugging your code before deploying it to production.
@@ -215,9 +213,9 @@ vagrant@ubuntu-xenial:~$ curl 35.231.193.217/api/v1/states
   - Make sure to pull up your Developer Tools on your favorite browser to verify that you have no errors
   - Upload your Nginx config as 5-app_server-nginx_config
 
-## My Links
-- [Github](https://github.com/Noransaber)
-- [LinkedIn](https://www.linkedin.com/in/noran-saber-abdelfattah-6198471ba/)
-- [Twitter](https://twitter.com/Noransaber11)
-- [Medium](https://medium.com/@noransaber685)
+## My Links🔗
+- [Github](https://github.com/Noransaber)💚
+- [LinkedIn](https://www.linkedin.com/in/noran-saber-abdelfattah-6198471ba/)❤️
+- [Twitter](https://twitter.com/Noransaber11)🌹
+- [Medium](https://medium.com/@noransaber685)😌
 
