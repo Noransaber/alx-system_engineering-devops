@@ -1,4 +1,6 @@
-![ClipWindowsGIF](https://github.com/Noransaber/alx-system_engineering-devops/assets/112859455/d9a31cd3-40f8-4b18-9afe-b583d1a81f25)# 0x1B. Web stack debugging #4😮‍💨
+# 0x1B. Web stack debugging #4😮‍💨
+
+![ClipWindowsGIF](https://github.com/Noransaber/alx-system_engineering-devops/assets/112859455/d9a31cd3-40f8-4b18-9afe-b583d1a81f25)
 
 # Install puppet-lint👀
 ```
